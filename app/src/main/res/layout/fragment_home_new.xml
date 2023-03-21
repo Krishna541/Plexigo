@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/btnAllMovies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/round_border_white_transparent"
+                    android:fontFamily="@font/poppins"
+                    android:letterSpacing=".01"
+                    android:padding="10dp"
+                    android:text="@string/all_movies"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnAllSeries"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bannerPicksForYou"
+                    app:layout_goneMarginTop="366dp" />
+
+                <TextView
+                    android:id="@+id/btnAllSeries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_border_white_transparent"
+                    android:fontFamily="@font/poppins"
+                    android:letterSpacing=".01"
+                    android:padding="10dp"
+                    android:text="@string/all_series"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btnAllMovies"
+                    app:layout_constraintEnd_toStartOf="@id/btnPpv"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@id/btnAllMovies"
+                    app:layout_constraintTop_toTopOf="@id/btnAllMovies" />
+
+                <TextView
+                    android:id="@+id/btnPpv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_border_white_transparent"
+                    android:fontFamily="@font/poppins"
+                    android:letterSpacing=".01"
+                    android:padding="10dp"
+                    android:text="@string/pvod"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btnAllMovies"
+                    app:layout_constraintEnd_toStartOf="@id/btnInTheatre"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@id/btnAllSeries"
+                    app:layout_constraintTop_toTopOf="@id/btnAllMovies" />
+
+                <TextView
+                    android:id="@+id/btnInTheatre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/round_border_white_transparent"
+                    android:fontFamily="@font/poppins"
+                    android:letterSpacing=".01"
+                    android:padding="10dp"
+                    android:text="@string/in_theatre"
+                    android:textAllCaps="false"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btnAllMovies"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                    app:layout_constraintStart_toEndOf="@id/btnPpv"
+                    app:layout_constraintTop_toTopOf="@id/btnAllMovies" />
+
+                <TextView
+                    android:id="@+id/txtBannerTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/whats_new"
+                    android:textSize="28dp"
+                    app:layout_constraintBottom_toTopOf="@id/bannerPicksForYou"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/checkBannerSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/round_border_white_transparent"
+                    android:button="@null"
+                    android:fontFamily="@font/poppins"
+                    android:padding="10dp"
+                    android:paddingHorizontal="12dp"
+                    android:text="@string/pick_for_you"
+                    app:layout_constraintBottom_toBottomOf="@id/txtBannerTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txtBannerTitle" />
+
+                <pl.pzienowicz.autoscrollviewpager.AutoScrollViewPager
+                    android:id="@+id/bannerPicksForYou"
+                    android:layout_width="match_parent"
+                    android:layout_height="325dp"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtBannerTitle"
+                    app:sliderAnimationDuration="1000"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="1000"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMarginBottom="20dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorRadius="1dp"
+                    app:sliderIndicatorSelectedColor="@color/colorPrimary"
+                    app:sliderIndicatorUnselectedColor="#5A5A5A"
+                    app:sliderScrollTimeInSec="1"
+                    app:sliderStartAutoCycle="true" />
+
+                <pl.pzienowicz.autoscrollviewpager.AutoScrollViewPager
+                    android:id="@+id/bannerWhatsNew"
+                    android:layout_width="match_parent"
+                    android:layout_height="325dp"
+                    android:layout_marginTop="16dp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtBannerTitle"
+                    app:sliderAnimationDuration="1000"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="1000"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMarginBottom="20dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorRadius="1dp"
+                    app:sliderIndicatorSelectedColor="@color/colorPrimary"
+                    app:sliderIndicatorUnselectedColor="#5A5A5A"
+                    app:sliderScrollTimeInSec="1"
+                    app:sliderStartAutoCycle="true" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewHome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/txtOffersNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg_button_red_round"
+        android:clickable="false"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        android:text="New offers for you"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+</FrameLayout>

@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_gradiant_profile"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/imgUser"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="30dp"
+                    android:paddingTop="5dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:maxLines="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/imgUser"
+                    app:layout_constraintStart_toEndOf="@id/imgUser"
+                    app:layout_constraintTop_toTopOf="@id/imgUser" />
+
+                <TextView
+                    android:id="@+id/txtSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/round_border_white_transparent"
+                    android:drawableEnd="@drawable/ic_arrow_right"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:paddingVertical="5dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="8dp"
+                    android:text="Settings"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@id/imgUser"
+                    app:layout_constraintTop_toBottomOf="@id/imgUser" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchFamilyFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:checked="false"
+                    android:text="Family Filter : OFF"
+                    android:textColor="@color/white"
+                    android:theme="@style/SCBSwitch"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/txtSettings"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txtSettings" />
+
+                <TextView
+                    android:id="@+id/txtOffersTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Offers"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@id/txtSettings"
+                    app:layout_constraintTop_toBottomOf="@id/txtSettings" />
+
+                <TextView
+                    android:id="@+id/txtOffersNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/bg_button_red_round"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="2dp"
+                    android:text="New offers for you"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/txtOffersTitle"
+                    app:layout_constraintStart_toEndOf="@id/txtOffersTitle"
+                    app:layout_constraintTop_toTopOf="@id/txtOffersTitle" />
+
+                <pl.pzienowicz.autoscrollviewpager.AutoScrollViewPager
+                    android:id="@+id/sliderOffers"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtOffersTitle"
+                    app:sliderAnimationDuration="1000"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="1000"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMarginBottom="20dp"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorRadius="1dp"
+                    app:sliderIndicatorSelectedColor="@color/colorPrimary"
+                    app:sliderIndicatorUnselectedColor="#5A5A5A"
+                    app:sliderScrollTimeInSec="1"
+                    app:sliderStartAutoCycle="true" />
+
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/pagerIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="visible"
+                    app:dotsColor="@color/white"
+                    app:dotsSize="6dp"
+                    app:dotsSpacing="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sliderOffers"
+                    app:selectedDotColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/txtYourWatchlistTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Your Watchlist"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/txtSettings"
+                    app:layout_constraintTop_toBottomOf="@id/pagerIndicator" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerWatchedMovieList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtYourWatchlistTitle"
+                    tools:listitem="@layout/item_content" />
+
+                <TextView
+                    android:id="@+id/txtMoreWatchedMovies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/round_border_white_transparent"
+                    android:drawableEnd="@drawable/ic_arrow_right"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="@color/white"
+                    android:fontFamily="@font/poppins"
+                    android:letterSpacing=".01"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="@string/show_all"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/txtYourWatchlistTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txtYourWatchlistTitle" />
+
+                <TextView
+                    android:id="@+id/txtFollowedListTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Lists you follow"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/txtSettings"
+                    app:layout_constraintTop_toBottomOf="@id/recyclerWatchedMovieList" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerFollowedList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtFollowedListTitle"
+                    app:layout_goneMarginBottom="20dp"
+                    tools:listitem="@layout/item_content" />
+
+                <TextView
+                    android:id="@+id/txtMoreFollowedPlaylist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/round_border_white_transparent"
+                    android:drawableEnd="@drawable/ic_arrow_right"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="@color/white"
+                    android:fontFamily="@font/poppins"
+                    android:letterSpacing=".01"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="@string/show_all"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/txtFollowedListTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txtFollowedListTitle" />
+
+                <TextView
+                    android:id="@+id/txtYourListTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Your lists"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/txtSettings"
+                    app:layout_constraintTop_toBottomOf="@id/recyclerFollowedList" />
+
+                <TextView
+                    android:id="@+id/txtMoreYourList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/round_border_white_transparent"
+                    android:drawableEnd="@drawable/ic_arrow_right"
+                    android:drawablePadding="3dp"
+                    android:drawableTint="@color/white"
+                    android:fontFamily="@font/poppins"
+                    android:letterSpacing=".01"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="@string/show_all"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/txtYourListTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txtYourListTitle"
+                    app:layout_goneMarginBottom="10dp" />
+
+                <View
+                    android:id="@+id/viewYourPlaylist"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="bottom"
+                    android:visibility="gone"
+                    android:background="@color/grey_dark"
+                    app:layout_constraintBottom_toTopOf="@id/recyclerYourPlaylists"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerYourPlaylists"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtYourListTitle"
+                    app:layout_goneMarginBottom="20dp"
+                    app:layout_goneMarginTop="10dp"
+                    tools:listitem="@layout/item_my_playlist" />
+
+                <TextView
+                    android:id="@+id/txtYouAreFollowing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="You are following"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/txtSettings"
+                    app:layout_constraintTop_toBottomOf="@id/recyclerYourPlaylists" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerFollowedUsers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtYouAreFollowing"
+                    app:layout_goneMarginBottom="20dp"
+                    tools:listitem="@layout/item_followed_user" />
+
+                <TextView
+                    android:id="@+id/txtTopGenres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Top Genres"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    app:layout_constraintStart_toStartOf="@id/txtSettings"
+                    app:layout_constraintTop_toBottomOf="@id/recyclerFollowedUsers" />
+
+                <TextView
+                    android:id="@+id/txtTopGenresNote"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="We think these are your favourite genres. You can drag to reorder them or just swipe away to delete."
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/txtSettings"
+                    app:layout_constraintTop_toBottomOf="@id/txtTopGenres" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardTopGenre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtTopGenresNote">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerTopGenres"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#4D000000"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_goneMarginBottom="20dp"
+                        tools:listitem="@layout/item_top_genre" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txtFavouritePeople"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Favourite People"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/txtSettings"
+                    app:layout_constraintTop_toBottomOf="@id/cardTopGenre" />
+
+                <TextView
+                    android:id="@+id/txtFavouritePeopleNote"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="You love their work, so we listed them here for you. Long-Press to delete a person"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/txtSettings"
+                    app:layout_constraintTop_toBottomOf="@id/txtFavouritePeople" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerFavouritePeople"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toTopOf="@id/layoutKnowBetter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtFavouritePeopleNote"
+                    app:layout_goneMarginBottom="20dp"
+                    tools:listitem="@layout/item_followed_user" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutKnowBetter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/txtSettings"
+                    app:layout_constraintTop_toBottomOf="@id/recyclerFavouritePeople">
+
+                    <TextView
+                        android:id="@+id/txtHelpUsKnowBetter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Help us know you better"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imgKnowUsBetter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="40dp"
+                        android:src="@drawable/img_know_better"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtHelpUsKnowBetter" />
+
+
+                    <TextView
+                        android:id="@+id/txtHelpUsKnowBetterNote"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Take this rapid-fire poll to help us improve our recommendations to you."
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/imgKnowUsBetter"
+                        app:layout_constraintTop_toTopOf="@id/imgKnowUsBetter" />
+
+                    <TextView
+                        android:id="@+id/btnLetsDoIt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_button_pink_round"
+                        android:drawableEnd="@drawable/ic_arrow_right"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center_vertical|start"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="8dp"
+                        android:text="Let's do it."
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/imgKnowUsBetter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imgKnowUsBetter" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btmSheetSubscriptionPlans"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSubscriptionPlans"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#EBE2EB"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

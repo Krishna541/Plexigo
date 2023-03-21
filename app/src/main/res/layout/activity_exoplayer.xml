@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatwindow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/chatlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="10">
+
+        <EditText
+            android:id="@+id/message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="8.5"
+            android:background="@drawable/bg_edit_text_tranparent_outline"
+            android:fontFamily="@font/poppins"
+            android:hint="Type a comment here"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:paddingLeft="10dp"
+            android:paddingTop="4dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="4dp"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor" />
+
+        <ImageView
+            android:id="@+id/send"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1.5"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_send_black_24dp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/player_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:controller_layout_id="@layout/exo_playback_control_view"
+            app:surface_type="surface_view" />
+    -->
+
+</RelativeLayout>

@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradiant_profile"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/back_bg"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="40dp"
+            android:src="@drawable/ic_left_arrow"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:visibility="visible"
+            app:drawableStartCompat="@drawable/ic_left_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imgUser"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:paddingTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/back_btn" />
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            app:layout_constraintBottom_toBottomOf="@id/imgUser"
+            app:layout_constraintEnd_toStartOf="@id/imgEditProfile"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/imgUser"
+            app:layout_constraintTop_toTopOf="@id/imgUser" />
+
+        <ImageView
+            android:id="@+id/imgEditProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/ic_edit_profile"
+            app:layout_constraintBottom_toBottomOf="@id/imgUser"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/txtName"
+            app:layout_constraintTop_toTopOf="@id/imgUser" />
+
+
+        <TextView
+            android:id="@+id/txtPlaylistNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/txtFollowerNumber"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgUser" />
+
+        <TextView
+            android:id="@+id/txtFollowerNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/txtPlaylistNumber"
+            app:layout_constraintEnd_toStartOf="@id/txtFollowingNumber"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@id/txtPlaylistNumber"
+            app:layout_constraintTop_toTopOf="@id/txtPlaylistNumber" />
+
+        <TextView
+            android:id="@+id/txtFollowingNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/txtPlaylistNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@id/txtFollowerNumber"
+            app:layout_constraintTop_toTopOf="@id/txtPlaylistNumber" />
+
+
+        <TextView
+            android:id="@+id/txtSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="25dp"
+            android:text="Settings"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPlaylistNumber" />
+
+        <View
+            android:id="@+id/viewProfile"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtSettings" />
+
+        <TextView
+            android:id="@+id/txtLinktoTv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            android:drawableEnd="@drawable/ic_arrow_right_gray"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="25dp"
+            android:text="@string/linktoTv"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/viewLinktoTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewProfile" />
+
+        <View
+            android:id="@+id/viewLinktoTv"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewProfile" />
+
+
+        <TextView
+            android:id="@+id/txtPrivacy"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            android:drawableEnd="@drawable/ic_arrow_right_gray"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="25dp"
+            android:text="Privacy Policy"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/viewPrivacy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewLinktoTv" />
+
+        <View
+            android:id="@+id/viewPrivacy"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewLinktoTv" />
+
+
+        <TextView
+            android:id="@+id/txtCookies"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            android:drawableEnd="@drawable/ic_arrow_right_gray"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="25dp"
+            android:text="Cookies Policy"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/viewCookies"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewPrivacy" />
+
+        <View
+            android:id="@+id/viewCookies"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewPrivacy" />
+
+
+        <TextView
+            android:id="@+id/txtContactUs"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            android:drawableEnd="@drawable/ic_arrow_right_gray"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="25dp"
+            android:text="Contact Us"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/viewContactUs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewCookies" />
+
+        <View
+            android:id="@+id/viewContactUs"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewCookies" />
+
+        <TextView
+            android:id="@+id/txtAboutUs"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            android:drawableEnd="@drawable/ic_arrow_right_gray"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="25dp"
+            android:text="About Us"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/viewAboutUs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewContactUs" />
+
+        <View
+            android:id="@+id/viewAboutUs"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/transparent"
+            android:drawableEnd="@drawable/ic_arrow_right_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewContactUs" />
+
+        <TextView
+            android:id="@+id/txtHelp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            android:drawableEnd="@drawable/ic_arrow_right_gray"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="25dp"
+            android:text="Help"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/viewHelp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewAboutUs" />
+
+        <View
+            android:id="@+id/viewHelp"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewAboutUs" />
+
+
+        <TextView
+            android:id="@+id/txtTermsCondition"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            android:drawableEnd="@drawable/ic_arrow_right_gray"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="25dp"
+            android:text="Terms and Condition"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/viewTermsCondition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewHelp" />
+
+        <View
+            android:id="@+id/viewTermsCondition"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewHelp" />
+
+        <TextView
+            android:id="@+id/txtDeleteAccount"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            android:drawableEnd="@drawable/ic_arrow_right_gray"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="25dp"
+            android:text="Delete Account"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/viewDeleteAccount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewTermsCondition" />
+
+        <View
+            android:id="@+id/viewDeleteAccount"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewTermsCondition" />
+
+
+        <TextView
+            android:id="@+id/txtLogout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@android:color/black"
+            android:drawableEnd="@drawable/ic_arrow_right_gray"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="25dp"
+            android:text="Logout"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/viewLogout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewDeleteAccount" />
+
+        <View
+            android:id="@+id/viewLogout"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewDeleteAccount" />
+
+        <TextView
+            android:id="@+id/txtAppVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewLogout"
+            app:layout_constraintVertical_bias="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

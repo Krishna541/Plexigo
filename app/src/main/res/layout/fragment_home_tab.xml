@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/layoutTabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnTabTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:letterSpacing=".01"
+                        android:maxLines="1"
+                        android:textAllCaps="false"
+                        android:textSize="28dp" />
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp">
+
+                            <Button
+                                android:id="@+id/btnAllMovies"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginTop="2dp"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="center"
+                                android:letterSpacing=".01"
+                                android:maxLines="1"
+                                android:text="@string/all_movies"
+                                android:textAllCaps="false" />
+
+                            <Button
+                                android:id="@+id/btnAllSeries"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/btnAllMovies"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_toEndOf="@id/btnAllMovies"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="center"
+                                android:letterSpacing=".01"
+                                android:maxLines="1"
+                                android:text="@string/all_series"
+                                android:textAllCaps="false" />
+
+                            <Button
+                                android:id="@+id/btnPpv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/btnAllMovies"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_toEndOf="@id/btnAllSeries"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="center"
+                                android:letterSpacing=".01"
+                                android:maxLines="1"
+                                android:text="@string/pvod"
+                                android:textAllCaps="false" />
+
+                            <Button
+                                android:id="@+id/btnInTheatre"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/btnAllMovies"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_toEndOf="@id/btnPpv"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="center"
+                                android:letterSpacing=".01"
+                                android:maxLines="1"
+                                android:text="@string/in_theatre"
+                                android:textAllCaps="false" />
+
+                            <Button
+                                android:id="@+id/btnComingSoon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/btnAllMovies"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_toEndOf="@id/btnPpv"
+                                android:background="@android:color/transparent"
+                                android:fontFamily="@font/poppins"
+                                android:gravity="center"
+                                android:letterSpacing=".01"
+                                android:maxLines="1"
+                                android:text="@string/coming_soon"
+                                android:textAllCaps="false"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edtSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layoutTabs"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toLeftOf="@id/btnFilter"
+                android:background="@drawable/bg_edit_text_tranparent_outline"
+                android:drawableStart="@drawable/ic_search_black_24dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/poppins"
+                android:hint="@string/search_movie_by_name"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="12dp"
+                android:textCursorDrawable="@null"
+                android:textSize="12dp" />
+
+            <ImageButton
+                android:id="@+id/btnFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/edtSearch"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_filter"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutTabs" />
+
+            <TextView
+                android:id="@+id/txtTitleLanguages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edtSearch"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins"
+                android:text="Languages"
+                android:textSize="18dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerFilterLanguages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edtSearch"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@id/txtTitleLanguages"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_content_language" />
+
+            <TextView
+                android:id="@+id/txtTitleGenres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTitleLanguages"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins"
+                android:text="Genres"
+                android:textSize="18dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerFilterGenres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTitleLanguages"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@id/txtTitleLanguages"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_content_language" />
+
+            <TextView
+                android:id="@+id/txtFilterOtt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTitleGenres"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_toEndOf="@id/txtTitleLanguages"
+                android:background="@drawable/round_border_white_transparent"
+                android:drawableEnd="@drawable/ic_arrow_right"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Configure OTT Services"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtClearFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTitleGenres"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/round_border_white_transparent"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Clear filter"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/layoutContainerTab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:visibility="visible" />
+
+        <FrameLayout
+            android:id="@+id/containerSearchList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerSearchList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:indeterminateDrawable="@drawable/progressbar_custom" />
+        </FrameLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

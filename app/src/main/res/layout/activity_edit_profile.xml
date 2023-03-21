@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackground">
+
+    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_gradiant_profile">
+
+            <TextView
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="25dp"
+                android:background="@color/back_bg"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="40dp"
+                android:src="@drawable/ic_left_arrow"
+                android:text="Back"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:drawableStartCompat="@drawable/ic_left_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/btnDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/round_border_white_transparent"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="Done"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:drawableStartCompat="@drawable/ic_selected"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back_btn" />
+
+            <TextView
+                android:id="@+id/txtTitleEditProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="25dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:text="Edit Profile"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnDone" />
+
+            <ImageView
+                android:id="@+id/imgUserProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTitleEditProfile" />
+
+            <TextView
+                android:id="@+id/txtChangePhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Change profile picture"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgUserProfile" />
+
+            <TextView
+                android:id="@+id/txtUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="32dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtChangePhoto" />
+
+            <TextView
+                android:id="@+id/txtUserEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtUserName" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekbarProgress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="50dp"
+                android:max="100"
+                android:progressBackgroundTint="@color/white"
+                android:thumb="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtUserEmail" />
+
+            <TextView
+                android:id="@+id/txtCompletedProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seekbarProgress" />
+
+            <TextView
+                android:id="@+id/txtTitleGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:text="Gender"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtCompletedProgress" />
+
+            <RadioGroup
+                android:id="@+id/radioGrpGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTitleGender">
+
+                <RadioButton
+                    android:id="@+id/rBtnMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/user_profile_radio_btn_selector"
+                    android:button="@null"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="12dp"
+                    android:text="Male" />
+
+                <RadioButton
+                    android:id="@+id/rBtnFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/user_profile_radio_btn_selector"
+                    android:button="@null"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="12dp"
+                    android:text="Female" />
+
+                <RadioButton
+                    android:id="@+id/rBtnOther"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/user_profile_radio_btn_selector"
+                    android:button="@null"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="12dp"
+                    android:text="Other" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txtTitleCountryState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:text="Country and State"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/radioGrpGender" />
+
+            <TextView
+                android:id="@+id/txtCountryState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/round_border_white_transparent"
+                android:drawableEnd="@drawable/ic_arrow_right"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="Select Country &amp; State"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@id/txtTitleCountryState"
+                app:layout_constraintTop_toBottomOf="@id/txtTitleCountryState" />
+
+
+            <TextView
+                android:id="@+id/txtTitleLanguagePreference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:text="Language Preference"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtCountryState" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPreferredLanguages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="25dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTitleLanguagePreference"
+                tools:listitem="@layout/item_content_language" />
+
+            <TextView
+                android:id="@+id/txtTitleGenrePreference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="8dp"
+                android:text="Genre Preference"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerPreferredLanguages" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPreferredGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="25dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTitleGenrePreference"
+                app:layout_constraintVertical_bias="0"
+                tools:listitem="@layout/item_content_language" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btmSheetCountryState"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="#DD000000"
+        android:clickable="false"
+        android:padding="8dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+
+        <TextView
+            android:id="@+id/txtBottomSheetTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerCountryState"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtBottomSheetTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

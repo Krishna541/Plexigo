@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackground">
+
+    <TextView
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/back_bg"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:padding="5dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="40dp"
+        android:src="@drawable/ic_left_arrow"
+        android:text="Back"
+        android:textColor="@color/white"
+        android:visibility="visible"
+        app:drawableStartCompat="@drawable/ic_left_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTitleOttServices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="8dp"
+        android:text="Your Services"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_btn" />
+
+    <TextView
+        android:id="@+id/txtSelectAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_border_white_transparent"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="Select All"
+        android:textColor="@color/white"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitleOttServices" />
+
+    <TextView
+        android:id="@+id/txtUnselectAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_border_white_transparent"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="Unselect All"
+        android:textColor="@color/white"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@id/txtSelectAll"
+        app:layout_constraintTop_toBottomOf="@id/txtTitleOttServices" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerFilterOtt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSelectAll"
+        tools:listitem="@layout/item_filter_ott" />
+</androidx.constraintlayout.widget.ConstraintLayout>

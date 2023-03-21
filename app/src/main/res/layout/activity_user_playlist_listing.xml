@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appBackground">
+
+        <TextView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/back_bg"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:padding="5dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="40dp"
+            android:src="@drawable/ic_left_arrow"
+            android:text="Back"
+            android:textColor="@color/white"
+            android:visibility="visible"
+            app:drawableStartCompat="@drawable/ic_left_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imgUserImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:padding="5dp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/back_btn" />
+
+        <TextView
+            android:id="@+id/txtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@id/imgUserImage"
+            app:layout_constraintTop_toTopOf="@id/imgUserImage" />
+
+        <TextView
+            android:id="@+id/txtUserDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="@id/imgUserImage"
+            app:layout_constraintStart_toEndOf="@id/imgUserImage" />
+
+
+        <Button
+            android:id="@+id/btnFollowUnfollow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_border_white_transparent"
+            android:fontFamily="@font/poppins"
+            android:paddingHorizontal="10dp"
+            android:text="Follow"
+            app:layout_constraintBottom_toTopOf="@id/txtUserDetails"
+            app:layout_constraintStart_toStartOf="@id/txtUserName"
+            app:layout_constraintTop_toBottomOf="@id/txtUserName" />
+
+        <TextView
+            android:id="@+id/txtPlaylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins"
+            android:text="Lists"
+            android:textSize="16dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/imgUserImage"
+            app:layout_constraintTop_toBottomOf="@id/imgUserImage" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPlaylistListing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPlaylist"
+            app:spanCount="2"
+            tools:listitem="@layout/item_content" />
+
+        <TextView
+            android:id="@+id/txtFollowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins"
+            android:text="Following"
+            android:textSize="16dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/imgUserImage"
+            app:layout_constraintTop_toBottomOf="@id/recyclerPlaylistListing" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFollowedUsers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtFollowing"
+            app:spanCount="2"
+            tools:listitem="@layout/item_followed_user" />
+
+
+        <TextView
+            android:id="@+id/txtNoData"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtUserName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

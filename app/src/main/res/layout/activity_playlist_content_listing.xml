@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appBackground">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:padding="5dp"
+            android:src="@drawable/back_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgBack" />
+
+        <TextView
+            android:id="@+id/txtPublicPlaylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/ic_public_playlist"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins"
+            android:text="Public"
+            android:textColor="@color/colorAccent"
+            android:textSize="16dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/txtUserName"
+            app:layout_constraintStart_toEndOf="@id/txtUserName"
+            app:layout_constraintTop_toTopOf="@id/txtUserName" />
+
+        <TextView
+            android:id="@+id/txtPrivatePlaylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/ic_private_playlist"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/poppins"
+            android:text="Private"
+            android:textColor="@color/colorAccent"
+            android:textSize="16dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/txtUserName"
+            app:layout_constraintStart_toEndOf="@id/txtUserName"
+            app:layout_constraintTop_toTopOf="@id/txtUserName" />
+
+        <TextView
+            android:id="@+id/txtUserDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtUserName" />
+
+
+        <ImageView
+            android:id="@+id/imgFollowPlaylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_add_playlist"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/txtUserName"
+            app:layout_constraintEnd_toStartOf="@id/imgUserImage"
+            app:layout_constraintTop_toTopOf="@id/txtUserName" />
+
+        <ImageView
+            android:id="@+id/imgUnFollowPlaylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_unfollow_playlist"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/txtUserName"
+            app:layout_constraintEnd_toStartOf="@id/imgUserImage"
+            app:layout_constraintTop_toTopOf="@id/txtUserName" />
+
+        <ImageView
+            android:id="@+id/imgFollowedPlaylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_lock"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/txtUserName"
+            app:layout_constraintEnd_toStartOf="@id/imgUnFollowPlaylist"
+            app:layout_constraintTop_toTopOf="@id/txtUserName" />
+
+        <ImageView
+            android:id="@+id/imgUserImage"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="24dp"
+            android:padding="5dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/txtUserName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txtUserName" />
+
+        <ImageView
+            android:id="@+id/imgPlaylistOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_more"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/imgBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imgBack" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPlaylistContent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtUserDetails"
+            app:spanCount="2"
+            tools:listitem="@layout/item_grid_content" />
+
+        <TextView
+            android:id="@+id/txtNoData"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtUserName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btmSheetPlaylistOptions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:padding="8dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_create_playlist"
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/txtRenamePlaylist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:padding="15dp"
+                android:text="Rename Playlist"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1C1D4A"
+                app:layout_constraintTop_toBottomOf="@id/txtRenamePlaylist" />
+
+            <TextView
+                android:id="@+id/txtDeletePlaylist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:padding="15dp"
+                android:text="Delete Playlist"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtRenamePlaylist" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1C1D4A"
+                app:layout_constraintTop_toBottomOf="@id/txtDeletePlaylist" />
+
+            <TextView
+                android:id="@+id/txtPublicPrivatePlaylist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:padding="15dp"
+                android:text="Make Playlist Public"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtDeletePlaylist" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

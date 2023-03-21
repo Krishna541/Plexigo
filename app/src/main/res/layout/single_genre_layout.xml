@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/full_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="10">
+
+    <!--<CheckBox
+        android:layout_width="wrap_content"
+        android:id="@+id/checkbox"
+        android:clickable="false"
+        android:layout_height="wrap_content" />-->
+
+    <LinearLayout
+        android:id="@+id/selected_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_two_corner_filter_unselected"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:minHeight="26dp"
+            android:text="fdfddf"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</LinearLayout>

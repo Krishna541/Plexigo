@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackground">
+
+    <TextView
+        android:id="@+id/btnSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:fontFamily="@font/poppins"
+        android:paddingHorizontal="15dp"
+        android:text="Skip"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/txtTellUsAboutYou"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtTellUsAboutYou" />
+
+    <TextView
+        android:id="@+id/txtTellUsAboutYou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/poppins"
+        android:text="Tell us about you"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtRateTitlePerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/poppins"
+        android:scrollbarSize="16dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTellUsAboutYou" />
+
+    <TextView
+        android:id="@+id/txtRemainingQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins"
+        android:scrollbarSize="16dp"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtRateTitlePerson" />
+
+    <pl.pzienowicz.autoscrollviewpager.AutoScrollViewPager
+        android:id="@+id/sliderOnBoardingMovies"
+        android:layout_width="0dp"
+        android:layout_height="410dp"
+        android:layout_marginTop="32dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtRemainingQuestion"
+        app:sliderAnimationDuration="5000"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="false"
+        app:sliderIndicatorAnimationDuration="1000"
+        app:sliderIndicatorGravity="center_horizontal|bottom"
+        app:sliderIndicatorMarginBottom="20dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorRadius="1dp"
+        app:sliderIndicatorSelectedColor="@color/colorPrimary"
+        app:sliderIndicatorUnselectedColor="#5A5A5A"
+        app:sliderStartAutoCycle="true" />
+
+    <pl.pzienowicz.autoscrollviewpager.AutoScrollViewPager
+        android:id="@+id/sliderOnBoardingActor"
+        android:layout_width="0dp"
+        android:layout_height="410dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtRemainingQuestion"
+        app:sliderAnimationDuration="5000"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="false"
+        app:sliderIndicatorAnimationDuration="1000"
+        app:sliderIndicatorGravity="center_horizontal|bottom"
+        app:sliderIndicatorMarginBottom="20dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorRadius="1dp"
+        app:sliderIndicatorSelectedColor="@color/colorPrimary"
+        app:sliderIndicatorUnselectedColor="#5A5A5A"
+        app:sliderStartAutoCycle="true" />
+
+    <TextView
+        android:id="@+id/btnDislike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_border_white_transparent"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Didn't liked it"
+        android:textColor="@color/white"
+        android:textSize="13dp"
+        app:drawableStartCompat="@drawable/ic_dislike_content_plain"
+        app:layout_constraintEnd_toStartOf="@id/btnNoIdea"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sliderOnBoardingMovies"
+        app:layout_goneMarginTop="450dp" />
+
+    <TextView
+        android:id="@+id/btnNoIdea"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@drawable/round_border_white_transparent"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:padding="8dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="5dp"
+        android:text="No idea"
+        android:textColor="@color/white"
+        android:textSize="13dp"
+        app:drawableEndCompat="@drawable/ic_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/btnDislike"
+        app:layout_constraintEnd_toStartOf="@id/btnLike"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/btnDislike"
+        app:layout_constraintTop_toTopOf="@id/btnDislike" />
+
+    <TextView
+        android:id="@+id/btnLike"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/round_border_white_transparent"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="I liked this"
+        android:textColor="@color/white"
+        android:textSize="13dp"
+        app:drawableStartCompat="@drawable/ic_like_content_plain"
+        app:layout_constraintBottom_toBottomOf="@id/btnDislike"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/btnNoIdea"
+        app:layout_constraintTop_toTopOf="@id/btnNoIdea" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

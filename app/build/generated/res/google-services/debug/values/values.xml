@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">1086225603182-ct9vtujqhak6fhjv65ec90v4o2a8nvhe.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1086225603182</string>
+    <string name="google_api_key" translatable="false">AIzaSyDnQ_l--bgk6ZbmKgA_n10rEYzb0_Nft2Q</string>
+    <string name="google_app_id" translatable="false">1:1086225603182:android:7063431b931445239fa47f</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDnQ_l--bgk6ZbmKgA_n10rEYzb0_Nft2Q</string>
+    <string name="google_storage_bucket" translatable="false">plexigotest.appspot.com</string>
+    <string name="project_id" translatable="false">plexigotest</string>
+</resources>

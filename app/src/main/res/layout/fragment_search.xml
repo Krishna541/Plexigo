@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/appBackground"
+        tools:context=".fragment.SearchFragment">
+
+        <TextView
+            android:id="@+id/searchtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="45dp"
+            android:fontFamily="@font/poppins"
+            android:text="Search"
+            android:textColor="@color/white"
+            android:textCursorDrawable="@null"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/search_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/searchtext"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical"
+            android:weightSum="10">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/grey_border_search"
+                android:drawableStart="@drawable/ic_search_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="Search by movie, actor, playlist"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:padding="5dp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutSearchResults"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/search_main_layout"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/search_movies_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="18dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@android:color/transparent"
+                android:indeterminateDrawable="@drawable/progressbar_custom"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/no_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppins"
+                android:text="No result found. Please refine your search"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutSearchLanding"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/search_main_layout"
+            android:paddingHorizontal="25dp">
+
+            <TextView
+                android:id="@+id/txtYouAreFollowing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/poppins"
+                android:text="Your recent searches"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerRecentSearches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtYouAreFollowing"
+                app:layout_goneMarginBottom="20dp"
+                tools:listitem="@layout/item_content" />
+
+            <TextView
+                android:id="@+id/txtListForEveryOccasion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins"
+                android:text="List For Every Mood"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerRecentSearches" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerListForEveryOccasion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtListForEveryOccasion"
+                app:layout_goneMarginBottom="20dp"
+                tools:listitem="@layout/item_playlist_home_page" />
+
+            <TextView
+                android:id="@+id/txtPopularUsers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/poppins"
+                android:text="Popular Users"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerListForEveryOccasion" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPopularUsers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtPopularUsers"
+                app:layout_goneMarginBottom="20dp"
+                tools:listitem="@layout/item_followed_user" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

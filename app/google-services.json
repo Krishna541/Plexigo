@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1086225603182",
+    "project_id": "plexigotest",
+    "storage_bucket": "plexigotest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086225603182:android:7063431b931445239fa47f",
+        "android_client_info": {
+          "package_name": "com.release.plexigo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086225603182-ct9vtujqhak6fhjv65ec90v4o2a8nvhe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnQ_l--bgk6ZbmKgA_n10rEYzb0_Nft2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086225603182-ct9vtujqhak6fhjv65ec90v4o2a8nvhe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

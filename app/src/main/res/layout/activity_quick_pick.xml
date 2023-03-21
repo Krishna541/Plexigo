@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="25dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:padding="5dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="40dp"
+        android:src="@drawable/ic_left_arrow"
+        android:text="Back"
+        android:textColor="@color/white"
+        android:visibility="visible"
+        app:drawableStartCompat="@drawable/ic_left_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.pzienowicz.autoscrollviewpager.AutoScrollViewPager
+        android:id="@+id/bannerPicksForYou"
+        android:layout_width="0dp"
+        android:layout_height="410dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_btn"
+        app:sliderAnimationDuration="5000"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="true"
+        app:sliderIndicatorAnimationDuration="1000"
+        app:sliderIndicatorGravity="center_horizontal|bottom"
+        app:sliderIndicatorMarginBottom="20dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorRadius="1dp"
+        app:sliderIndicatorSelectedColor="@color/colorPrimary"
+        app:sliderIndicatorUnselectedColor="#5A5A5A"
+        app:sliderStartAutoCycle="true" />
+
+    <TextView
+        android:id="@+id/btnViewDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/bg_button_pink_round"
+        android:drawableRight="@drawable/ic_arrow_right"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="View Details"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/btnSkip"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bannerPicksForYou" />
+
+    <TextView
+        android:id="@+id/btnSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_border_white_transparent"
+        android:fontFamily="@font/poppins"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="10dp"
+        android:text="Skip"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/btnViewDetails"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/btnViewDetails"
+        app:layout_constraintTop_toTopOf="@id/btnViewDetails" />
+
+    <TextView
+        android:id="@+id/txtGenre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="start"
+        android:paddingStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txtLanguageDuration"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtLanguageDuration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="end"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txtGenre" />
+
+    <TextView
+        android:id="@+id/txtMovieSynopsis"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/poppins"
+        android:padding="16dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@id/txtGenre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnViewDetails" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

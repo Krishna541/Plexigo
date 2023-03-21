@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.release.plexigo"
+    android:versionCode="90"
+    android:versionName="3.11.9" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="32" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+        <!-- Query Camera Packages -->
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent> <!-- Query Open Document -->
+        <intent>
+            <action android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
+        </intent>
+    </queries>
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:glEsVersion="0x00020000" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
+    <application
+        android:name="io.branch.referral.BranchApp"
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true" >
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/plexigo_notification_icon" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+        <service
+            android:name="com.release.plexigo.firebaseMessaging.MyFirebaseMessagingService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name="com.release.plexigo.activity.FestivalContentListingActivity" />
+        <activity android:name="com.release.plexigo.activity.OnBoardingActivity" />
+        <activity android:name="com.release.plexigo.activity.FilterOttActivity" />
+        <activity
+            android:name="com.release.plexigo.activity.QuickPickActivity"
+            android:theme="@style/QuickPick" />
+        <activity android:name="com.release.plexigo.activity.PlaylistListingActivity" />
+        <activity android:name="com.release.plexigo.activity.VerifyAuthCodeActivity" />
+        <activity android:name="com.release.plexigo.activity.ChannelCategoryListingActivity" />
+        <activity
+            android:name="com.release.plexigo.activity.PaypalPaymentActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="com.release.plexigo" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.release.plexigo.activity.ChatActivity" />
+        <activity
+            android:name="com.release.plexigo.activity.YoutubeTrailerPlaybackActivity"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name="com.release.plexigo.activity.OtpValidationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.release.plexigo.activity.TrailerPlayerActivity"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name="com.release.plexigo.activity.VideoPlayerActivity"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:theme="@style/HomeActivity" />
+        <!--
+                <activity
+                    android:name=".Activity.ExoplayerActivity"
+                    android:configChanges="orientation|screenSize|layoutDirection"
+                    android:theme="@style/HomeActivity" />
+        -->
+        <activity
+            android:name="com.release.plexigo.activity.PlayOnTvActivity"
+            android:label="@string/title_activity_play_on_tv"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.release.plexigo.activity.ForgotPasswordActivity" />
+        <activity android:name="com.release.plexigo.activity.EditProfileActivity" />
+        <activity android:name="com.release.plexigo.activity.ErrorActivity" />
+        <activity android:name="com.release.plexigo.activity.FilterMoviesActivity" />
+        <activity android:name="com.release.plexigo.activity.WebPaymentActivity" />
+        <activity android:name="com.release.plexigo.activity.WebViewActivity" />
+        <activity android:name="com.release.plexigo.activity.ReviewsActivity" />
+        <activity android:name="com.release.plexigo.activity.CastDetailActivity" />
+        <activity android:name="com.release.plexigo.activity.CastAndCrewActivity" />
+        <activity
+            android:name="com.release.plexigo.activity.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.release.plexigo.activity.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.release.plexigo.activity.OfferActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.release.plexigo.activity.ContentDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ContentDetailActivity" />
+        <activity
+            android:name="com.release.plexigo.activity.MoreContentListActivity"
+            android:screenOrientation="portrait" />
+        <!--
+                <activity
+                    android:name=".Activity.HomeActivity"
+                    android:label="@string/title_activity_home"
+                    android:screenOrientation="portrait"
+                    android:theme="@style/AppTheme.NoActionBar" />
+        -->
+        <activity
+            android:name="com.release.plexigo.activity.SplashActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Branch URI Scheme -->
+            <intent-filter>
+                <data android:scheme="http" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true" >
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="plexigo.app.link"
+                    android:scheme="https" />
+                <!-- example-alternate domain is required for App Links when the Journeys/Web SDK and Deepviews are used inside your website. -->
+                <data
+                    android:host="plexigo-alternate.app.link"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.release.plexigo.activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.release.plexigo.activity.NewHomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HomeActivity" />
+        <activity
+            android:name="com.release.plexigo.activity.FilterResultsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.release.plexigo.activity.PlaylistContentListingActivity" />
+        <activity android:name="com.release.plexigo.activity.UserPlaylistListingActivity" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <service android:name="com.release.plexigo.Common.AddWatchHistoryService" />
+
+        <meta-data
+            android:name="io.branch.sdk.BranchKey"
+            android:value="key_live_ff2dbfSEQzFsUGtdVHAxukkosrcbRzHZ" />
+        <meta-data
+            android:name="io.branch.sdk.BranchKey.test"
+            android:value="key_test_hlxrWC5Zx16DkYmWu4AHiimdqugRYMr" />
+        <meta-data
+            android:name="io.branch.sdk.TestMode"
+            android:value="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.release.plexigo.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@style/com_facebook_activity_theme" />
+        <activity android:name="com.facebook.CustomTabMainActivity" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cct.com.release.plexigo"
+                    android:scheme="fbconnect" />
+            </intent-filter>
+        </activity>
+
+        <uses-library
+            android:name="androidx.window.extensions"
+            android:required="false" />
+        <uses-library
+            android:name="androidx.window.sidecar"
+            android:required="false" />
+
+        <activity
+            android:name="pub.devrel.easypermissions.AppSettingsDialogHolderActivity"
+            android:exported="false"
+            android:label=""
+            android:theme="@style/EasyPermissions.Transparent" />
+        <activity
+            android:name="com.github.dhaval2404.imagepicker.ImagePickerActivity"
+            android:screenOrientation="unspecified"
+            android:theme="@style/Theme.Transparent.ImagePicker" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <provider
+            android:name="com.github.dhaval2404.imagepicker.ImagePickerFileProvider"
+            android:authorities="com.release.plexigo.imagepicker.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/image_picker_provider_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule"
+            android:value="GlideModule" />
+
+        <receiver
+            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+        <!--
+             FirebaseMessagingService performs security checks at runtime,
+             but set to not exported to explicitly avoid allowing another app to call it.
+        -->
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:directBootAware="true"
+            android:exported="false" >
+            <intent-filter android:priority="-500" >
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:directBootAware="true"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+        <!--
+         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+         with the application context. This config is merged in with the host app's manifest,
+         but there can only be one provider with the same authority activated at any given
+         point; so if the end user has two or more different apps that use Facebook SDK, only the
+         first one will be able to use the provider. To work around this problem, we use the
+         following placeholder in the authority to identify each host application as if it was
+         a completely different provider.
+        -->
+        <provider
+            android:name="com.facebook.internal.FacebookInitProvider"
+            android:authorities="com.release.plexigo.FacebookInitProvider"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--
+            Service handling Google Sign-In user revocation. For apps that do not integrate with
+            Google Sign-In, this service will never be started.
+        -->
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+            android:visibleToInstantApps="true" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="com.release.plexigo.firebaseinitprovider"
+            android:directBootAware="true"
+            android:exported="false"
+            android:initOrder="100" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.release.plexigo.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
+
+        <service
+            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+            android:exported="false" >
+            <meta-data
+                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+                android:value="cct" />
+        </service>
+        <service
+            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" >
+        </service>
+
+        <receiver
+            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+            android:exported="false" />
+
+        <service
+            android:name="com.sendbird.android.SendBirdFirebaseInstanceIDService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.sendbird.android.SendBirdFirebaseMessagingService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.sendbird.android.SendBirdHmsMessagingService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#23064D</color>
+    <color name="colorPrimaryDark">#180433</color>
+    <color name="colorAccent">#D53189</color>
+    <color name="colorSecondary">#D53189</color>
+
+    <color name="grey_dark">#222222</color>
+    <color name="grey_faint">#2C2C2C</color>
+    <color name="primarydark">#24083C</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="textColor">#A397AD</color>
+    <color name="bg_gradiant_dark">#24083C</color>
+    <color name="bg_login_signup">#51105D</color>
+
+    <color name="back_bg">#66000000</color>
+    <color name="colorAccent10">#1AD53189</color>
+
+    <color name="appBackground">@color/colorPrimary</color>
+    <color name="itemBackground">#101130</color>
+
+    <color name="nagra_menu_text">#9F9F9F</color>
+    <color name="DarkSlateGray">#2F4F4F</color>
+    <color name="titleFocusedBlueColor">#003366</color>
+
+    <color name="transparent_blue_light">#BF00A7E6</color>
+
+    <color name="bharat_ott_orange">#FF851A</color>
+
+    <color name="colorTransparent">#00000000</color>
+    <color name="lightGrey">#e8e6eb</color>
+    <color name="black">#000000</color>
+</resources>

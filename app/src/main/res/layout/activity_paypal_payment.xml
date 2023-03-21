@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackground"
+    tools:context=".Activity.PaypalPaymentActivity">
+
+    <TextView
+        android:id="@+id/titletext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins"
+        android:text="Please wait"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/titlehelptext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titletext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins"
+        android:text="Do not press back button"
+        android:textSize="20sp" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titlehelptext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:indeterminateDrawable="@drawable/progressbar_custom" />
+
+</RelativeLayout>

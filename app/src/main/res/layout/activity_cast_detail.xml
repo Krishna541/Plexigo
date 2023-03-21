@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/imgActorBanner"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginBottom="15dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/gradient_transparent_primary_color"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/imgActorBanner"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="25dp"
+                android:background="@color/back_bg"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="40dp"
+                android:src="@drawable/ic_left_arrow"
+                android:text="Back"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:drawableStartCompat="@drawable/ic_left_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgActor"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="50dp"
+                app:layout_constraintBottom_toBottomOf="@id/imgActorBanner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <TextView
+                android:id="@+id/txtActorName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="24dp"
+                app:layout_constraintBottom_toBottomOf="@id/imgActorBanner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgActor" />
+
+            <TextView
+                android:id="@+id/txtAreYouFan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@id/txtTitleWatchTheirLatest"
+                app:layout_constraintEnd_toStartOf="@id/btnDislike"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgActorBanner" />
+
+            <ImageView
+                android:id="@+id/btnDislike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_dislike_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/txtAreYouFan"
+                app:layout_constraintEnd_toStartOf="@id/btnLike"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@id/txtAreYouFan"
+                app:layout_constraintTop_toTopOf="@id/txtAreYouFan" />
+
+            <ImageView
+                android:id="@+id/btnLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_like_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/btnDislike"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@id/btnDislike"
+                app:layout_constraintTop_toTopOf="@id/btnDislike"
+                app:layout_goneMarginStart="25dp" />
+
+            <TextView
+                android:id="@+id/txtTitleWatchTheirLatest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/poppins"
+                android:text="Watch their latest"
+                android:textColor="@color/white"
+                android:textSize="21dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtAreYouFan" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerFilmography"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="25dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTitleWatchTheirLatest"
+                app:layout_constraintVertical_bias="0"
+                app:spanCount="2"
+                tools:listitem="@layout/item_grid_content" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutNoData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+
+            <TextView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="25dp"
+                android:background="@color/back_bg"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:padding="5dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="40dp"
+                android:src="@drawable/ic_left_arrow"
+                android:text="Back"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:drawableStartCompat="@drawable/ic_left_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtNoData"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:text="No data found"
+                android:textSize="20dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

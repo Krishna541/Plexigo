@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp">
+
+    <TextView
+        android:id="@+id/section_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins"
+        android:padding="4dp"
+        android:text="playlists"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toStartOf="@+id/more"
+        app:layout_constraintBottom_toBottomOf="@id/topGradient"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/topGradient"
+        app:layout_goneMarginTop="50dp" />
+
+    <TextView
+        android:id="@+id/more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/box_border_pink_transparent"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:drawablePadding="3dp"
+        android:drawableTint="@color/colorAccent"
+        android:fontFamily="@font/poppins"
+        android:letterSpacing=".01"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        android:text="@string/show_all"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/section_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/section_name" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/sub_content_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/section_name"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:scrollbarSize="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/section_name"
+        app:layout_goneMarginBottom="50dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutTopUser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sub_content_list">
+
+        <ImageView
+            android:id="@+id/imgTopUserLeft"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/round_border_white_transparent"
+            android:scaleType="center"
+            android:src="@drawable/ic_left_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgTopUserRight"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/round_border_white_transparent"
+            android:scaleType="center"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgTopUser"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@id/imgTopUserLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtUserDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/poppins"
+            android:padding="10dp"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/imgTopUser"
+            app:layout_constraintEnd_toStartOf="@id/imgTopUserRight"
+            app:layout_constraintStart_toEndOf="@id/imgTopUser"
+            app:layout_constraintTop_toTopOf="@id/imgTopUser" />
+
+        <com.smarteist.autoimageslider.IndicatorView.PageIndicatorView
+            android:id="@+id/dotsIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtUserDetail"
+            app:piv_animationType="worm"
+            app:piv_radius="4dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/topGradient"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/gradient_transparent_black_inverted"
+        android:clickable="false"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/bottomGradient"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gradient_transparent_black"
+        android:clickable="false"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@id/layoutTopUser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutTopUser" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

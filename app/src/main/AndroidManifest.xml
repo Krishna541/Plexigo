@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.release.plexigo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+
+    <application
+        android:name="io.branch.referral.BranchApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/plexigo_notification_icon" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+        <service
+            android:name=".firebaseMessaging.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".activity.FestivalContentListingActivity"></activity>
+        <activity android:name=".activity.OnBoardingActivity" />
+        <activity android:name=".activity.FilterOttActivity" />
+        <activity
+            android:name=".activity.QuickPickActivity"
+            android:theme="@style/QuickPick" />
+        <activity android:name=".activity.PlaylistListingActivity" />
+        <activity android:name=".activity.VerifyAuthCodeActivity" />
+        <activity android:name=".activity.ChannelCategoryListingActivity" />
+        <activity
+            android:name=".activity.PaypalPaymentActivity"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="com.release.plexigo" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.ChatActivity" />
+        <activity
+            android:name=".activity.YoutubeTrailerPlaybackActivity"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name=".activity.OtpValidationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.TrailerPlayerActivity"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:hardwareAccelerated="true" />
+        <activity
+            android:name=".activity.VideoPlayerActivity"
+            android:configChanges="orientation|screenSize|layoutDirection"
+            android:theme="@style/HomeActivity" />
+        <!--
+                <activity
+                    android:name=".Activity.ExoplayerActivity"
+                    android:configChanges="orientation|screenSize|layoutDirection"
+                    android:theme="@style/HomeActivity" />
+        -->
+        <activity
+            android:name=".activity.PlayOnTvActivity"
+            android:label="@string/title_activity_play_on_tv"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.ForgotPasswordActivity" />
+        <activity android:name=".activity.EditProfileActivity" />
+        <activity android:name=".activity.ErrorActivity" />
+        <activity android:name=".activity.FilterMoviesActivity" />
+        <activity android:name=".activity.WebPaymentActivity" />
+        <activity android:name=".activity.WebViewActivity" />
+        <activity android:name=".activity.ReviewsActivity" />
+        <activity android:name=".activity.CastDetailActivity" />
+        <activity android:name=".activity.CastAndCrewActivity" />
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.OfferActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ContentDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ContentDetailActivity" />
+        <activity
+            android:name=".activity.MoreContentListActivity"
+            android:screenOrientation="portrait" />
+        <!--
+                <activity
+                    android:name=".Activity.HomeActivity"
+                    android:label="@string/title_activity_home"
+                    android:screenOrientation="portrait"
+                    android:theme="@style/AppTheme.NoActionBar" />
+        -->
+        <activity
+            android:name=".activity.SplashActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Branch URI Scheme -->
+            <intent-filter>
+                <data android:scheme="http" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="plexigo.app.link"
+                    android:scheme="https" />
+                <!-- example-alternate domain is required for App Links when the Journeys/Web SDK and Deepviews are used inside your website. -->
+                <data
+                    android:host="plexigo-alternate.app.link"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NewHomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/HomeActivity" />
+        <activity
+            android:name=".activity.FilterResultsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.PlaylistContentListingActivity" />
+        <activity android:name=".activity.UserPlaylistListingActivity" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <service android:name=".Common.AddWatchHistoryService" />
+
+        <meta-data
+            android:name="io.branch.sdk.BranchKey"
+            android:value="key_live_ff2dbfSEQzFsUGtdVHAxukkosrcbRzHZ" />
+        <meta-data
+            android:name="io.branch.sdk.BranchKey.test"
+            android:value="key_test_hlxrWC5Zx16DkYmWu4AHiimdqugRYMr" />
+        <meta-data
+            android:name="io.branch.sdk.TestMode"
+            android:value="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
+</manifest>

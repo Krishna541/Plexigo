@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:id="@+id/imgOtt"
+            android:layout_width="100dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingHorizontal="12dp"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchOtt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="25dp"
+            android:checked="false"
+            android:textColor="@color/white"
+            android:theme="@style/SCBSwitch" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/dividerView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/frame"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent" />
+</RelativeLayout>
